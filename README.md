@@ -37,7 +37,7 @@ graph TD
 
 ## 🎥 Video Walkthrough
 
-[![Watch the Loom Walkthrough](https://img.shields.io/badge/Loom-Walkthrough-blue?style=for-the-badge&logo=loom)](https://www.loom.com/share/your_loom_id_here)
+[![Watch the Loom Walkthrough](https://img.shields.io/badge/Loom-Walkthrough-blue?style=for-the-badge&logo=loom)](https://www.loom.com/share/b87c9da75ca74b06b93fc0033dffd75a)
 
 *(Click the badge above to watch a detailed explanation of the system in action.)*
 
