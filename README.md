@@ -41,6 +41,47 @@ graph TD
 
 *(Click the badge above to watch a detailed explanation of the system in action.)*
 
+## 🤖 AI-Powered Analysis
+
+WebRecall leverages **Gemini 2.5 Flash** to transform raw event streams into high-level business intelligence.
+
+### How it Works
+1.  **Task Reconstruction**: The system groups individual events (clicks, scrolls) into "Tasks" based on time-gaps and domain shifts.
+2.  **Context Injection**: The top 8 most relevant actions from each task, along with page titles and H1s, are sent to the AI.
+3.  **Intelligent Synthesis**: Gemini generates:
+    *   **Browsing Session Details**: A structured Markdown table including the primary intent for each domain visited.
+    *   **Narrative Summary**: A 2-3 paragraph explanation of the user's workflow, inferred objectives, and outcomes.
+
+> [!TIP]
+> To enable this, ensure your `GOOGLE_API_KEY` is configured in `backend/.env`.
+
+---
+
+## 📄 Example Data Entry
+
+This is a real-world example of a transition event captured by the [content.js](file:///c:/Users/ARNAV%20PANDEY/OneDrive/Desktop/webextension-recall/extension/content.js) and processed by the [FastAPI Backend](file:///c:/Users/ARNAV%20PANDEY/OneDrive/Desktop/webextension-recall/backend/main.py).
+
+```json
+{
+  "session_id": "demo_sess_4921",
+  "user_id": "user_demo_1",
+  "timestamp": "2024-03-23T10:15:00.000Z",
+  "domain": "google.com",
+  "url": "https://www.google.com/search?q=how+to+use+fastapi",
+  "page_title": "how to use fastapi - Google Search",
+  "event_type": "click",
+  "metadata": {
+    "element": "A",
+    "text": "FastAPI Documentation",
+    "xpath": "//*[@id='rso']/div[1]/div/div/div/div/div/a",
+    "link_url": "https://fastapi.tiangolo.com/",
+    "page_h1": "how to use fastapi"
+  }
+}
+```
+
+*Source: Adapted from [scripts/generate_sample_data.py](file:///c:/Users/ARNAV%20PANDEY/OneDrive/Desktop/webextension-recall/scripts/generate_sample_data.py)*
+
 ---
 
 ## 📊 Browser Log Structure
